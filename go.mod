@@ -8,8 +8,10 @@ require (
 	github.com/cyphar/filepath-securejoin v0.2.2 // indirect
 	github.com/ghodss/yaml v1.0.0
 	github.com/gobwas/glob v0.2.3 // indirect
+	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/huandu/xstrings v1.3.0 // indirect
 	github.com/imdario/mergo v0.3.8 // indirect
+	github.com/mitchellh/gox v1.0.1 // indirect
 	github.com/mitchellh/reflectwalk v1.0.1 // indirect
 	github.com/otiai10/copy v1.0.2
 	github.com/pkg/errors v0.9.1 // indirect
