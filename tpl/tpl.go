@@ -18,6 +18,19 @@ import (
 	"k8s.io/helm/pkg/strvals"
 )
 
+func collectEnv() map[string]string {
+	envMap := make(map[string]string)
+	envStrs := os.Environ()
+	for _, envStr := range envStrs {
+		spl := strings.SplitN(envStr, "=", 2)
+		if len(spl) != 2 {
+			continue
+		}
+		envMap[spl[0]] = spl[1]
+	}
+	return envMap
+}
+
 func getFunctions() template.FuncMap {
 	f := sprig.TxtFuncMap()
 
@@ -146,6 +159,8 @@ func ParseTemplate(tplFileNames []string, opts *options.Options) error {
 		return err
 	}
 
+	envs := collectEnv()
+	values["ENV"] = envs
 	result, err := executeTemplates(values, tplFileNames, opts.IsStrict, opts.OutputPath)
 	if err != nil {
 		return err

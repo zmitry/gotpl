@@ -3,3 +3,4 @@ gotpl
 *.swo
 vendor
 _dist
+.vscode
